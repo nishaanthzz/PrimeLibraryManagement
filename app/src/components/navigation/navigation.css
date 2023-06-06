@@ -1,0 +1,16 @@
+.nav-head
+{
+    @apply w-auto h-[7rem] bg-[#114bd1] 
+    rounded-b-lg m-1 border-solid border-[4px] p-4 border-[#b48e1b];
+}
+
+
+.nav-logo{
+    @apply w-[5rem] h-[5rem] rounded-full;
+}
+
+.nav-logo img
+{
+    @apply w-[5rem] h-[5rem] -translate-y-2 ; 
+
+}
