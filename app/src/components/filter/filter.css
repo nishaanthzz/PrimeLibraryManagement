@@ -1,0 +1,11 @@
+.filter-comp-body
+{
+    @apply flex bg-[#393939] h-[4rem] items-center justify-center;
+}
+
+.filter-comp-body span
+{
+    @apply text-[#fff] text-[1.2rem] font-medium m-4;
+}
+
+

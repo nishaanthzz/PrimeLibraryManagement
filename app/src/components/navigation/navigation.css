@@ -1,7 +1,8 @@
 .nav-head
 {
-    @apply w-auto h-[7rem] bg-[#114bd1] 
-    rounded-b-lg m-1 border-solid border-[4px] p-4 border-[#b48e1b];
+    @apply w-auto h-[7rem] bg-[#114bd1]  p-4
+    rounded-b-lg m-1 border-solid border-[4px] border-[#b48e1b]
+    flex;
 }
 
 
@@ -13,4 +14,12 @@
 {
     @apply w-[5rem] h-[5rem] -translate-y-2 ; 
 
+}
+.nav-links
+{
+    @apply flex gap-4 justify-center items-center ml-[5rem];
+}
+.nav-links a
+{
+    @apply text-[#b48e1b] text-2xl font-bold m-4;
 }

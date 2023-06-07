@@ -1,20 +1,17 @@
 import React from 'react'
 import './home.css' 
-import {BookCard} from '../../components/bookCard/bookCard.js'
+import RenderBooks from '../../components/renderBooks/renderBooks';
 const Home = () => {
+
+
+
+
   return (
     <div className=''>
-    
-
-
-
-    <div className="book-items">
       
-      <BookCard/>
-    
-    
-    </div>
-    
+       
+        <RenderBooks />
+        
     </div>
 
 

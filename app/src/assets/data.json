@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Fiction",
+      "publishYear": 1925,
+      "status": "Available",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/51o5RmQtroL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "publishYear": 1813,
+      "status": "Available",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/51o5RmQtroL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Classic",
+      "publishYear": 1960,
+      "status": "Available",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/51o5RmQtroL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 4,
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "publishYear": 1949,
+      "status": "Available",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/51o5RmQtroL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 5,
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "publishYear": 1954,
+      "status": "Available",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/51o5RmQtroL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 6,
+      "title": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "genre": "Dystopian",
+      "publishYear": 2008,
+      "status": "Available",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/51o5RmQtroL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "genre": "Fantasy",
+      "publishYear": 1997,
+      "status": "Available",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/51o5RmQtroL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 8,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Classic",
+      "publishYear": 1951,
+      "status": "Available",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/51o5RmQtroL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 9,
+      "title": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "genre": "Thriller",
+      "publishYear": 2003,
+      "status": "Available",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/51o5RmQtroL._SX331_BO1,204,203,200_.jpg"
+    }
+  ]

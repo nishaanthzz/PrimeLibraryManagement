@@ -1,13 +1,33 @@
 .card-box
 { 
     @apply lg:w-[70%] md:w-[80%] w-[90%] 
-            lg:h-[20rem]  md:h-[15rem] h-[10rem]
+            lg:h-[25rem]  md:h-[15rem] h-[10rem]
             
-            rounded-[5%] border-solid border-[3px] 
+            rounded-[5%] border-solid border-[3px]
+         
             
-    border-[#0e0e0e] m-auto my-4;
+            bg-[#399393]  border-[#0e0e0e] m-auto my-4 text-ellipsis  transition duration-[1s] ease-in-out;
+}
+.card-box:hover 
+{
+    @apply scale-105 overflow-visible;
 }
 .book-pic
 {
     @apply w-auto h-[55%] rounded-[5%] m-1  bg-[#923939];
+}
+.book-pic img
+{
+    @apply w-full h-full rounded-[5%];
+}
+.book-info
+{
+    @apply  text-center
+}
+.attr
+{
+    @apply text-[#322ce8] text-[1.2rem] truncate drop-shadow-xl
+} 
+.attr span{
+    @apply text-[#fefafa]
 }
