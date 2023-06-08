@@ -24,7 +24,7 @@ mongoose.connect(process.env.CONN_STR,
     {
     console.log("SUCCESS MONGODB Connection");
     }
-    ).catch((err)=>{console.log("ERROR MONGODB")})
+    ).catch((err)=>{console.log("ERROR from MONGODB")})
 
 
 app.get('/viewbook/:id',crudfuncs.getBook);
