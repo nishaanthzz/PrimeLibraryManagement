@@ -2,8 +2,38 @@ const BookModel=require('./model.js')
 
 
 
-//ForSale
-exports.getForSale= async (req, res)=>
+exports.postBook= async (req, res)=>
+{
+    try {
+        const obj = await BookModel.create(req.body);
+        res.send({"status":"Success",
+        "data":obj })}
+        catch (err) {
+            res.send({status:"Failed","mesaage":"Insert failed",err});
+    }
+    }
+
+// exports.updateView= async (req, res)=>
+
+
+// exports.postRating= async (req, res)=>
+
+
+exports.getBook= async (req, res)=>
+{
+    try {
+        
+         obj= await BookModel.findById(req.params.id);
+        //  console.log(obj)
+        res.status(200).json({"status": "Success", "data": obj})
+    }
+    catch (err) {
+        res.status(404).json({status:"Failed","mesaage":"Getting failed","Error":err.message});
+    }
+}
+
+
+exports.getAllBooks= async (req, res)=>
 {
     try {
        obj= await BookModel.find();
@@ -12,6 +42,17 @@ exports.getForSale= async (req, res)=>
     catch (err) {
         res.status(500).json({status:"Failed","mesaage":"Getting failed","Error":err.message});
     }
+}
 
-
+exports.postReview=async ( req, res)=>
+{
+    try {
+        const obj= await BookModel.findById(req.params.id);
+        obj.ratings.push(req.body);
+        obj.save();
+        res.status(200).json({"status": "Success", "data": obj})
+    }
+    catch (err) {
+        res.status(500).json({status:"Failed","mesaage":"Getting failed","Error":err.message});
+    }
 }

@@ -1,0 +1,66 @@
+.review-form
+{
+    margin-left:19%;
+    @apply border-solid border-[#282828] border-[3px]
+    rounded-[1rem]
+    h-[15rem] w-[50%] my-[0.2rem] bg-[#ffffff] block
+}
+.review-form h1
+{
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-left:1rem;
+    padding-bottom: 0.5rem;
+}
+.review-form input
+{
+    display: block;
+    height:2.5rem;
+    width: 50%;
+    padding-left: 1rem;
+    margin-left:2rem;
+    margin-bottom: .3rem;
+    border-radius: 0.5rem;
+    @apply bg-[#f5f7ff];
+    /* text-align: center; */
+}
+
+.review-form input::placeholder
+{
+    margin-left:-3rem;
+    font-size: 1rem;
+    font-weight: 400;
+    @apply text-[#a3a3a3];
+    /* padding-left: 0.5rem; */
+    transition: 1s;
+    
+    /* margin-bottom: 1rem; */
+}
+
+.review-form select{
+    
+    margin-bottom: .3rem;
+    margin-left:2rem;
+}
+.review-form button
+{
+    display: block;
+    margin-left:2rem;
+    margin-top: .51rem;
+    padding: 0.5rem 1rem;
+    background-color: blue;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    transition: 1s;
+}
+ 
+.review-form span{
+    margin-left:2rem;
+}
+
+4.review-form button:hover
+{
+    background-color: red;
+    
+    
+}

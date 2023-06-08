@@ -5,14 +5,24 @@ import {BookCard} from '../bookCard/bookCard.js'
 import Filter from '../filter/filter.js'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useState } from 'react';
+import { Loading } from '../loading/loading';
+import axios from 'axios';
 
+
+
+
+// import { getAllBooks } from '../../assets/fetch';
 export const filterContext = createContext({title:"", author:"", genre:"", publishYear:""});
 
 
-
 const RenderBooks = () => {
-    const [bookData,setBookData]=useState(books);
-    const [limit, setLimit]=useState(10);
+    
+
+    // console.log(typeof books)
+
+    const [hasNext,setHasNext]=useState(true);
+    const [bookData,setBookData]=useState();
+    const [limit, setLimit]=useState(8);
     const updateFilter = (filters,action) => {
         switch(action.type){
             case 'title':
@@ -27,47 +37,106 @@ const RenderBooks = () => {
                 return filters;
         }
         }
-
+const [allData,setAllData]=useState([]);
 const [filters, dispatch] = useReducer(updateFilter,{title:"", author:"", genre:"", publishYear:""});
-
-const filterFunc=()=>
-{
-    let filteredBooks=books;
-    if(filters.title)
-    { filteredBooks = filteredBooks.filter((book)=>book.title.toLowerCase().includes(filters.title.toLowerCase()));}
-    if(filters.author)
-    { filteredBooks = filteredBooks.filter((book)=>book.author.toLowerCase().includes(filters.author.toLowerCase()));}
-    if(filters.genre)
-    { filteredBooks = filteredBooks.filter((book)=>book.genre.toLowerCase().includes(filters.genre.toLowerCase()));}
-    if(filters.publishYear)
-    { filteredBooks = filteredBooks.filter((book)=>book.publishYear.toString().includes(filters.publishYear));}
-    return filteredBooks;
-}
+const getAllBooks=async ()=>
+{  
+    axios.get('http://localhost:5000/books')
+    .then((obj)=>
+    {   console.log(allData)
+        setAllData(obj.data.data);
+        setBookData(obj.data.data);
     
-let filteredData=filterFunc();
+          })
+    .catch((err)=>{setAllData(books);});
+    
+        
+   
+    }
+const filterFunc= ()=>
+{
+    
+    
+    
+ 
+    let filteredBooks=allData;
+ 
+   if(filters.title)
+       { filteredBooks = filteredBooks.filter((book)=>book.title.toLowerCase().includes(filters.title.toLowerCase()));}
+       if(filters.author)
+       { filteredBooks = filteredBooks.filter((book)=>book.author.toLowerCase().includes(filters.author.toLowerCase()));}
+       if(filters.genre)
+       { filteredBooks = filteredBooks.filter((book)=>book.genre.toLowerCase().includes(filters.genre.toLowerCase()));}
+       if(filters.publishYear)
+       { filteredBooks = filteredBooks.filter((book)=>book.publishYear.toString().includes(filters.publishYear));}
+       
+
+        return filteredBooks;
+    
+   
+}
+// const [allData,setAllData]=useState([]);
+
+
 useEffect(()=>
-{setBookData(filteredData)}
-,[filteredData]
+{
+    getAllBooks();
+    
+    return ()=>{}
+},[])   
+
+useEffect( ()=>
+{   
+    let filteredData=filterFunc();
+    setBookData(filteredData);
+   
+    return ()=>{}
+}
+
+,[filters]
 
 )
 
-console.log(filters);
+
+
+const fetchMoreData=()=>
+{    if (limit<bookData.length)
+    {setTimeout(() => {
+        if( limit+8>=bookData.length)
+        {setLimit(bookData.length);
+        setHasNext(false);}
+        else
+        {setLimit(limit+8);}
+    }, 1500);}
+    else
+    {setTimeout(() => {
+        setLimit(bookData.length);
+    }
+    , 1500);
+    setHasNext(false);}
+        
+}
+
+// console.log(filters);
   return (
      
     <filterContext.Provider value={{filterState: filters, dispatchState: dispatch }}  >
     <div>
         <Filter />
-        <InfiniteScroll 
-        dataLength={bookData.length}
+        {  Array.isArray(bookData)  &&  <InfiniteScroll className='book-items'
+        dataLength={limit}
+        next={fetchMoreData}
+        hasMore={hasNext}
+        loader={<Loading/>}
+        endMessage={<h1 className='m-auto col-span-full text-[10rem]'>That's all the books!</h1>}
+        
         
         
         >
-            <div className="book-items">
+        {
             
-                        {
-            
-                        bookData.map((book) => {
-                            {
+                        bookData.slice(0,limit).map((book) => {
+                            {   
                                 return (
                                     <BookCard obj={book}/>
                                             );
@@ -75,8 +144,8 @@ console.log(filters);
                             }
                             })
                         }
-                </div>
-        </InfiniteScroll>
+               
+        </InfiniteScroll>}
     </div>
     </filterContext.Provider>
   )

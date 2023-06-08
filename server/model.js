@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const BookSchema=new mongoose.Schema({
     
 
@@ -8,12 +9,11 @@ const BookSchema=new mongoose.Schema({
     genre: { type:String},    
     available: { type:String,enum: ['Available','Not Available']},
     publishYear: { type: Number},
-    interests: { type: Number},
+    synopsis: { type: String},
+    ratings: {type: Array},
     image: { type: String},
-    description: { type: String},
-    rating: { type: Number},
-    reviews: { type: Number},
+    interests: { type: Number},
 });
 
-BookModel = mongoose.model('BookSchema',BookSchema,'Book');
+BookModel = mongoose.model('BookSchema',BookSchema,'BooksInfo');
 module.exports= BookModel;

@@ -1,16 +1,16 @@
 .card-box
 { 
-    @apply lg:w-[70%] md:w-[80%] w-[90%] 
-            lg:h-[25rem]  md:h-[15rem] h-[10rem]
+    @apply lg:w-[90%] md:w-[80%] w-[90%] 
+            lg:h-[33rem]  md:h-[25rem] h-[20rem]
             
-            rounded-[5%] border-solid border-[3px]
+            rounded-[1rem] border-solid border-[3px]
          
             
-            bg-[#399393]  border-[#0e0e0e] m-auto my-4 text-ellipsis  transition duration-[1s] ease-in-out;
+            bg-[#d4dfff]  border-[#0e0e0e] m-auto my-4 text-ellipsis  transition duration-[1s] ease-in-out;
 }
 .card-box:hover 
 {
-    @apply scale-105 overflow-visible;
+    @apply scale-105 overflow-visible border-[#fefafa] border-[3px] shadow-2xl;
 }
 .book-pic
 {
@@ -22,12 +22,28 @@
 }
 .book-info
 {
-    @apply  text-center
+    /* @apply  text-center */
 }
 .attr
 {
-    @apply text-[#322ce8] text-[1.2rem] truncate drop-shadow-xl
+    /* position: left; */
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+
+    @apply text-[#000000] text-[1.2rem] truncate drop-shadow-xl;
 } 
 .attr span{
-    @apply text-[#fefafa]
+    @apply text-[#200b48];
+    font-weight: 400;
+}
+.views
+{
+    display: grid;
+    grid-template-columns: 20% 20% 80%;
+
+}
+.rating
+{
+    /* margin-left: -3rem */
+    /* @apply ml-28 ; */
 }
