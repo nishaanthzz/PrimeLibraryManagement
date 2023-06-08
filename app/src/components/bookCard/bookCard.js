@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './bookCard.css'
 import{ Link }from 'react-router-dom'
+import { useState } from 'react'
 const BookCard = (obj) => {
   let bookData = obj.obj;
   // console.log(bookData);
-  
+  const [avgRating,setAvgRating]=useState(0);
+  useEffect
+  (()=>{
+    //average Rating calculation
+    let sum=0;
+   
+    for(let i=0;i<bookData.ratings.length;i++)
+    {
+      sum+=bookData.ratings[i].star;
+    }
+    let x=sum/bookData.ratings.length;
+    setAvgRating(x.toFixed(1));
+  },[])
+
   return (
     <Link to={`/viewbook/${bookData._id}`}>
     <div className="card-box ">
         <div className="book-pic">
-
+ 
             <img src={bookData.image} alt="book-pic"/>
          
 
@@ -30,7 +44,7 @@ const BookCard = (obj) => {
 
         {      bookData.interests>=25 ? <span>🔥</span>  : <span></span>      }
 
-        <div className='attr rating'>Rating: <span>{bookData.rating}</span>
+        <div className='attr rating'>Rating: <span>{avgRating}</span>
         
         </div >
         </div>
