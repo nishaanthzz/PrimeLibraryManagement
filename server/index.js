@@ -34,5 +34,6 @@ app.get('/books',crudfuncs.getAllBooks);
     app.listen(process.env.PORT,()=>{
         console.log('Listening on port '+process.env.PORT+"...");
         })
-app.post('/postReview/:id',crudfuncs.postReview);
+app.patch('/postReview/:id',crudfuncs.postReview);
+app.patch('/updateViews/:id',crudfuncs.updateViews)
 app.post('/postBook',crudfuncs.postBook);

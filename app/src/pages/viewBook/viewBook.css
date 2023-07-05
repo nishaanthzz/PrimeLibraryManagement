@@ -10,7 +10,7 @@
     grid-template-columns: 30% 70%;
     @apply my-4 mx-auto w-[80%]
 
-    bg-[#ffffff] rounded-[.8rem]
+    bg-[#fffff1] rounded-[.8rem]
    
 
     border-solid border-2 border-[#ffff2b] p-4
@@ -37,13 +37,39 @@
     @apply py-6
 }
 
-.ratings
+.all-ratings
 {
     display: grid;
     grid-template-columns: 50% 50%;
+  
+    
 }
 
-.ratingss
+.ratings-body
 {
+    @apply   bg-[#ffffff] rounded-[.8rem] my-4 w-[80%] p-4
 
+    drop-shadow-lg  
+}
+
+.rating-b
+{
+    @apply drop-shadow-[0_35px_35px_rgba(1,1,1,1)] border-solid border-2 border-[#ffff2b] py-2 bg-[#b620202a]
+    rounded-[.8rem]  w-[80%] p-4 my-2
+}
+.rat-title
+{
+    @apply text-2xl font-bold ml-[0.1rem] p-4
+}
+.rat-name
+{
+    @apply text-lg font-bold ml-[2rem] text-[#3730f5cf]
+}
+.rat-star, .rat-review
+{
+    @apply text-lg font-semibold  ml-[3rem]
+}
+.rat-star
+{
+    @apply  font-bold
 }

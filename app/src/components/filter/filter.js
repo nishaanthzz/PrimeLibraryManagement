@@ -32,8 +32,15 @@ let dispatch= filterContexts.dispatchState;
             
         </div>
         <div className='filter-attr publish-date' >
-            <span>|  Published</span>
-            <input type='text' className='date-input fi'  onChange={(e)=>dispatch({type: "publishYear" , payload: e.target.value})}/>
+            <span>|  Published </span>
+            <span>From </span>
+            <input type='text' className='date-input fi'  onChange={(e)=>dispatch({type: "publishYearFrom" , payload: e.target.value})}/>
+            <br/>
+            
+            
+            <span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To</span>
+            <input type='text' className='date-input fi translate-x-7 '  onChange={(e)=>dispatch({type: "publishYearTo" , payload: e.target.value})}/>
+        
             
         </div>
 

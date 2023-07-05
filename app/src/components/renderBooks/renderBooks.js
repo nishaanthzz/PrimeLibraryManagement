@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useReducer } from 'react'
 import './renderBooks.css'
-import books from '../../assets/data.json';
+import books from '../../assets/primeData.json';
 import {BookCard} from '../bookCard/bookCard.js'
 import Filter from '../filter/filter.js'
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -21,7 +21,7 @@ const RenderBooks = () => {
     // console.log(typeof books)
 
     const [hasNext,setHasNext]=useState(true);
-    const [bookData,setBookData]=useState();
+    const [bookData,setBookData]=useState(books);
     const [limit, setLimit]=useState(8);
     const updateFilter = (filters,action) => {
         switch(action.type){
@@ -33,20 +33,26 @@ const RenderBooks = () => {
                 return {...filters,genre:action.payload}
             case 'publishYear':
                 return {...filters,publishYear:action.payload}
+            case 'publishYearFrom':
+                 return {...filters,publishYearFrom:action.payload}
+            case 'publishYearTo':
+            return {...filters,publishYearTo:action.payload}
             default:
                 return filters;
         }
         }
-const [allData,setAllData]=useState([]);
-const [filters, dispatch] = useReducer(updateFilter,{title:"", author:"", genre:"", publishYear:""});
+const [allData,setAllData]=useState(books);
+const [filters, dispatch] = useReducer(updateFilter,{title:"", author:"", genre:"", publishYear:"",publishYearFrom:"",publishYearTo:""});
 const getAllBooks=async ()=>
 {  
     axios.get('http://localhost:5000/books')
     .then((obj)=>
-    {   console.log(allData)
+    {  
+        if(obj.data.status==="Success")
+       { 
         setAllData(obj.data.data);
         setBookData(obj.data.data);
-    
+        }
           })
     .catch((err)=>{setAllData(books);});
     
@@ -56,10 +62,8 @@ const getAllBooks=async ()=>
 const filterFunc= ()=>
 {
     
-    
-    
- 
     let filteredBooks=allData;
+
  
    if(filters.title)
        { filteredBooks = filteredBooks.filter((book)=>book.title.toLowerCase().includes(filters.title.toLowerCase()));}
@@ -69,13 +73,16 @@ const filterFunc= ()=>
        { filteredBooks = filteredBooks.filter((book)=>book.genre.toLowerCase().includes(filters.genre.toLowerCase()));}
        if(filters.publishYear)
        { filteredBooks = filteredBooks.filter((book)=>book.publishYear.toString().includes(filters.publishYear));}
+         if(filters.publishYearFrom)
+         { filteredBooks = filteredBooks.filter((book)=>book.publishYear>=filters.publishYearFrom);}
+        if(filters.publishYearTo)
+            { filteredBooks = filteredBooks.filter((book)=>book.publishYear<=filters.publishYearTo);}
        
 
         return filteredBooks;
     
    
 }
-// const [allData,setAllData]=useState([]);
 
 
 useEffect(()=>
@@ -122,13 +129,13 @@ const fetchMoreData=()=>
      
     <filterContext.Provider value={{filterState: filters, dispatchState: dispatch }}  >
     <div>
-        <Filter />
+        <Filter/>
         {  Array.isArray(bookData)  &&  <InfiniteScroll className='book-items'
         dataLength={limit}
         next={fetchMoreData}
         hasMore={hasNext}
         loader={<Loading/>}
-        endMessage={<h1 className='m-auto col-span-full text-[10rem]'>That's all the books!</h1>}
+        endMessage={<h1 className='endmsg'>That's all the books!</h1>}
         
         
         

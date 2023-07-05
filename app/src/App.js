@@ -4,7 +4,8 @@ import {Doc} from './pages/doc/doc';
 import {Genres} from './pages/genres/genres';
 import {Home} from './pages/home/home';
 import {ViewBook} from './pages/viewBook/viewBook';
-
+import Footer from './components/footer/footer';
+import {PostBookPage} from './pages/postBookPage/postBookPage';
 
 import './App.css';
 
@@ -25,9 +26,10 @@ function App() {
         <Route path="/genres" element={<Genres />} />
         
         <Route path="/viewbook/:id" element={<ViewBook />} />
+        <Route path="/addbook" element={<PostBookPage />} />
       
-
       </Routes>
+      <Footer />
 
     
       

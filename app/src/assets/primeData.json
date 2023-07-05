@@ -1,0 +1,213 @@
+[{
+  "_id": {
+    "$oid": "64809a62a6cfb9dc260162d4"
+  },
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "genre": "Classic",
+  "publishYear": 1960,
+  "status": "Available",
+  "synopsis": "Stolen Art and a Detective finds it",
+  "ratings": [
+    {
+      "star": 5,
+      "review": "awesome book",
+      "name": "User 1"
+    },
+    {
+      "star": 5,
+      "name": "Nisha",
+      "review": "awesome"
+    },
+    {
+      "name": "Rakesh",
+      "star": 1,
+      "review": "Fine BOOK!"
+    }
+  ],
+  "image": "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg",
+  "interests": 2,
+  "__v": 6
+},
+{
+  "_id": {
+    "$oid": "64809a62a6cfb9dc260162d3"
+  },
+  "title": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "genre": "Romance",
+  "publishYear": 1813,
+  "status": "Available",
+  "synopsis": "Stolen Art and a Detective finds it",
+  "ratings": [
+    {
+      "star": 5,
+      "review": "awesome book",
+      "name": "User 32"
+    }
+  ],
+  "image": "https://images.squarespace-cdn.com/content/v1/58c180edff7c50dd0e51a2ad/1596041993633-UW2GTN4JZP8XLPZKKXCJ/9781847493699.jpg",
+  "interests": 2,
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "64809a62a6cfb9dc260162d5"
+  },
+  "title": "1984",
+  "author": "George Orwell",
+  "genre": "Dystopian",
+  "publishYear": 1949,
+  "status": "Available",
+  "synopsis": "Stolen Art and a Detective finds it",
+  "ratings": [
+    {
+      "star": 5,
+      "review": "awesome book",
+      "name": "User 16"
+    }
+  ],
+  "image": "https://m.media-amazon.com/images/I/71NvkZxn-fL._AC_UF1000,1000_QL80_.jpg",
+  "interests": 2
+},
+{
+  "_id": {
+    "$oid": "64809a62a6cfb9dc260162d9"
+  },
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "genre": "Classic",
+  "publishYear": 1951,
+  "status": "Not Available",
+  "synopsis": "Stolen Art and a Detective finds it",
+  "ratings": [
+    {
+      "star": 5,
+      "review": "awesome book",
+      "name": "User 5"
+    }
+  ],
+  "image": "https://m.media-amazon.com/images/I/816v0rgEiTL._AC_UF894,1000_QL80_.jpg",
+  "interests": 2
+},
+{
+  "_id": {
+    "$oid": "64809a62a6cfb9dc260162d7"
+  },
+  "title": "The Hunger Games",
+  "author": "Suzanne Collins",
+  "genre": "Dystopian",
+  "publishYear": 2008,
+  "status": "Available",
+  "synopsis": "Stolen Art and a Detective finds it",
+  "ratings": [
+    {
+      "star": 5,
+      "review": "awesome book",
+      "name": "User 8"
+    }
+  ],
+  "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722975l/2767052._SY475_.jpg",
+  "interests": 2
+},
+{
+  "_id": {
+    "$oid": "64809a62a6cfb9dc260162d2"
+  },
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "genre": "Fiction",
+  "publishYear": 1925,
+  "status": "Available",
+  "synopsis": "Stolen Art and a Detective finds it",
+  "ratings": [
+    {
+      "star": 5,
+      "review": "awesome book",
+      "name": "User1"
+    }
+  ],
+  "image": "https://kbimages1-a.akamaihd.net/5addc4c9-fbc1-42d7-a79f-cec7619d4b23/1200/1200/False/the-great-gatsby-a-novel-1.jpg",
+  "interests": 2,
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "64809a62a6cfb9dc260162d8"
+  },
+  "title": "Harry Potter and the Sorcerer's Stone",
+  "author": "J.K. Rowling",
+  "genre": "Fantasy",
+  "publishYear": 1997,
+  "status": "Available",
+  "synopsis": "Stolen Art and a Detective finds it",
+  "ratings": [
+    {
+      "star": 5,
+      "review": "awesome book",
+      "name": "User 67"
+    }
+  ],
+  "image": "https://m.media-amazon.com/images/I/91ocU8970hL._AC_UF1000,1000_QL80_.jpg",
+  "interests": 2
+},
+{
+  "_id": {
+    "$oid": "64809a62a6cfb9dc260162d6"
+  },
+  "title": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien",
+  "genre": "Fantasy",
+  "publishYear": 1954,
+  "status": "Available",
+  "synopsis": "Stolen Art and a Detective finds it",
+  "ratings": [
+    {
+      "star": 5,
+      "review": "awesome book",
+      "name": "User 78"
+    }
+  ],
+  "image": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg",
+  "interests": 2
+},
+{
+  "_id": {
+    "$oid": "64809a62a6cfb9dc260162da"
+  },
+  "title": "The Da Vinci Code",
+  "author": "Dan Brown",
+  "genre": "Thriller",
+  "publishYear": 2004,
+  "status": "Not Available",
+  "synopsis": "Stolen Art and a Detective finds it",
+  "ratings": [
+    {
+      "star": 5,
+      "review": "awesome book",
+      "name": "User 45"
+    }
+  ],
+  "image": "https://www.thoughtco.com/thmb/dbFTerm-8CCGlvFHiV9_yq58h_w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/the-da-vinci-code-589f9cee3df78c4758a2d9e7.jpg",
+  "interests": 25
+},
+{
+  "_id": {
+    "$oid": "64816f200730f01e811ce452"
+  },
+  "title": "Harry Potter and the Chamber of Secrets",
+  "author": "J. K. Rowling",
+  "genre": "Fantasy",
+  "publishYear": 1998,
+  "synopsis": "Harry Potter returns to Hogwarts after a second year inspite of a warning from Dobby, a lowly elf",
+  "ratings": [
+    {
+      "name": "PotterHead",
+      "star": 5,
+      "review": "The best yet again. JK Rowling rocks!"
+    }
+  ],
+  "image": "https://m.media-amazon.com/images/I/510CXXt9CqL.jpg",
+  "interests": 0,
+  "__v": 0
+}]

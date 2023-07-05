@@ -47,8 +47,22 @@ exports.getAllBooks= async (req, res)=>
 exports.postReview=async ( req, res)=>
 {
     try {
+        // console.log(req.body)
         const obj= await BookModel.findById(req.params.id);
         obj.ratings.push(req.body);
+        obj.save();
+        res.status(200).json({"status": "Success", "data": obj.ratings})
+    }
+    catch (err) {
+        res.status(500).json({status:"Failed","mesaage":"Getting failed","Error":err.message});
+    }
+}
+exports.updateViews=async ( req, res)=>
+{
+    try {
+        // console.log(req.body)
+        const obj= await BookModel.findById(req.params.id);
+        obj.interests++;
         obj.save();
         res.status(200).json({"status": "Success", "data": obj})
     }

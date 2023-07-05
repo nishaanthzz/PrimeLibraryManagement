@@ -3,6 +3,7 @@ import './viewBook.css'
 import { useParams } from 'react-router-dom'
 import axios  from 'axios';
 import PostReview from '../../components/PostReview/PostReview';
+
 const ViewBook = () => {
   // console.log(axios)
  
@@ -15,11 +16,20 @@ const ViewBook = () => {
   { const obj = await axios.get(`http://localhost:5000/viewbook/${id}`);
     
       setRes(obj.data.data);
+      
   
   }
+  const updateViews= async ()=>
+  {
+    const res = await axios.patch(`http://localhost:5000/updateViews/${id}`);
+    console.log(res);
+  }
+
 
     
-useEffect(()=>{ getBook( )},[])
+useEffect(()=>{ getBook()
+                updateViews()         
+               },[])
 
   return (
     <div>
@@ -38,19 +48,20 @@ useEffect(()=>{ getBook( )},[])
                 
               </div>
           </div>
-          <div className='ratings'>
+          <div className='all-ratings'>
 
-              <PostReview />
+              <PostReview propId={res._id} />
 
-              <div className='ratingss'>
-              <h1>Ratings({res.ratings.length})</h1>
+              <div className='ratings-body'>
+              <h1 className ='rat-title' >Ratings({res.ratings.length})</h1>
               { res.ratings.map((rating)=>
               {
                   return(
-                      <div className='rating'>
-                          <h2>{rating.name}</h2>
-                          <h3>{rating.star} ⭐</h3>
-                          <h4>{rating.review}</h4>
+                      <div className='rating-b'>
+                        
+                          <h2 className='rat-name'>{rating.name}</h2>
+                          <h3 className='rat-star'>{rating.star} ⭐</h3>
+                          <h4 className='rat-review'> {rating.review}</h4>
                       </div>
                   )
                   

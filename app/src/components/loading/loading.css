@@ -1,7 +1,7 @@
 
 .load-5
 {
-    @apply flex place-items-center justify-center gap-0 col-span-full ;
+    @apply flex place-items-center justify-center gap-0 col-span-full p-[2rem];
 }
 .load-5 h2
 {
@@ -17,6 +17,8 @@
     margin: 0 auto;
     border: 4px solid #4b9cdb;
     border-radius: 100%;
+
+  
   }
   .ball-holder {
     position: absolute;
